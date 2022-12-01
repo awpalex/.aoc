@@ -4,7 +4,7 @@ lines = f.read().splitlines()
 horPos = 0
 depth = 0
 for line in lines:
-    instruction = line.split(' ')
+    instruction = line.split(" ")
     if instruction[0] == "forward":
         horPos += int(instruction[1])
     elif instruction[0] == "up":
