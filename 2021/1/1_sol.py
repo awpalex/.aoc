@@ -1,4 +1,4 @@
-filename = "C:/Users/Alex/Documents/.aoc/2021/1/1_input.txt"
+filename = "2021/1/1_input.txt"
 f = open(filename, "r")
 lines = f.read().splitlines()
 print(lines)

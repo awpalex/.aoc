@@ -3,7 +3,7 @@ def listToInt(reading: list)-> int:
     value = int(value,2)
     return value
 
-f = open("C:/Users/Alex/Documents/.aoc/2021/3/3_input.txt", "r")
+f = open("2021/3/3_input.txt", "r")
 lines = f.read().splitlines()
 
 binaryLength = len(lines[0])
@@ -36,6 +36,6 @@ print(gamma)
 epsilon = listToInt(epsilon)
 gamma = listToInt(gamma)
 
-print(epsilon, gamma)
+print('eg',epsilon, gamma)
 
 print(epsilon * gamma)

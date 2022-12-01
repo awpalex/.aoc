@@ -1,4 +1,4 @@
-f = open("C:/Users/Alex/Documents/.aoc/2021/2/2_input.txt")
+f = open("2021/2/2_input.txt")
 lines = f.read().splitlines()
 
 horPos = 0
