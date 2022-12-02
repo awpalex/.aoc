@@ -27,7 +27,7 @@ def checkWin(boards: list[list[list[str]]]) -> tuple[int, list]:
         for line in board:
             if line.count("x") == len(line):
                 winnerList.add(boardCount)
-    
+
         for row in range(0, len(board[0])):
             winningCol = True
             if [board[col][row] for col in range(len(board[0]))].count("x") != 5:
@@ -46,7 +46,7 @@ def crossNums(boards: list[list[list[str]]], bingoNum: str) -> list[list[list[st
         for lineCount, line in enumerate(board):
             for numCount, number in enumerate(line):
                 if number == bingoNum:
-                    boards[boardCount][lineCount][numCount]= 'x'
+                    boards[boardCount][lineCount][numCount] = "x"
     return boards
 
 
@@ -61,13 +61,13 @@ def solve_p1(bingoNums, boards):
 
     for winner in winnerList:
         print(boards[winner])
-        print(winner, 'with number', winningNum)
+        print(winner, "with number", winningNum)
         noncrossedTotal = 0
         for row in boards[winner]:
             for cell in row:
-                if cell != 'x':
+                if cell != "x":
                     noncrossedTotal += int(cell)
-        print('answer =',int(winningNum)*int(noncrossedTotal))
+        print("answer =", int(winningNum) * int(noncrossedTotal))
 
 
 def solve_p2(bingoNums, boards):
@@ -79,16 +79,16 @@ def solve_p2(bingoNums, boards):
         numberOfWinners, winnerList = checkWin(boards)
         if lastBoardReached and numberOfBoards == numberOfWinners:
             print(boards[loser])
-            print(loser, 'with number', bingoNum)
+            print(loser, "with number", bingoNum)
             noncrossedTotal = 0
             for row in boards[loser]:
                 for cell in row:
-                    if cell != 'x':
+                    if cell != "x":
                         noncrossedTotal += int(cell)
-            print('answer =',int(bingoNum)*int(noncrossedTotal))
+            print("answer =", int(bingoNum) * int(noncrossedTotal))
             break
 
-        if numberOfWinners == numberOfBoards-1:
+        if numberOfWinners == numberOfBoards - 1:
             for i in range(0, numberOfBoards):
                 if i not in winnerList:
                     loser = i
@@ -99,5 +99,5 @@ def solve_p2(bingoNums, boards):
 filename = "2021/4/4_input.txt"
 bingoNums, boards = parseInput(filename)
 solve_p1(bingoNums, boards)
-print('------------------------')
+print("------------------------")
 solve_p2(bingoNums, boards)
