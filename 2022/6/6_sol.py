@@ -1,12 +1,12 @@
+def find_message(input, len_mark):
+    for i in range(len(input)-len_mark-1):
+        window = input[i:i+len_mark]
+        if len(set(window)) == len(window):
+            print(i+len_mark)
+            break
+
+
 f = open('2022/6/6_input.txt')
 input = f.read()
-print(input)
-
-
-#input = 'bvwbjplbgvbhsrlpgdmjqwftvncz'
-for i in range(len(input)-3):
-    window = input[i:i+4]
-    if len(set(window)) == len(window):
-        print(i+4)
-        break
-    
+find_message(input, 4)
+find_message(input, 14)
